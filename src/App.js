@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Icon, Layout } from "antd";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, BrowserRouter } from "react-router-dom";
 
 import "./App.css";
 import StudentHome from "./components/Student/Home/StudentHome";
@@ -21,8 +21,8 @@ class App extends Component {
         <Switch>
           <Route path="/me" exact component={StudentHome} />
           <Route
-            path="/login"
             exact
+            path="/"
             component={() => {
               return (
                 <>
@@ -50,7 +50,7 @@ class App extends Component {
           />
           <Route path="/attendance" exact component={AttendancePage} />
           <Route path="/assignments" exact component={AssignmentHome} />
-          <Route component={Error404} />
+          {/* <Route component={Error404} /> */}
         </Switch>
         <Layout.Footer className={Classes.footer}>
           <Icon type="copyright" theme="twoTone" />
@@ -62,3 +62,5 @@ class App extends Component {
 }
 
 export default App;
+
+// path="/login"

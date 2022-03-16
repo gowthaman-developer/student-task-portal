@@ -5,7 +5,7 @@ import AssignmetModal from "../AssignmentModal/AssignmentModal";
 
 class AssignmentList extends Component {
   static defaultProps = {
-    isCompleted: false
+    isCompleted: false,
   };
   render() {
     return (
@@ -13,14 +13,14 @@ class AssignmentList extends Component {
         style={{ padding: "0px 20px" }}
         itemLayout="vertical"
         dataSource={this.props.data.filter(
-          v => Math.floor(Math.random() * 10) > 5
+          (v) => Math.floor(Math.random() * 10) > 5
         )}
         header={
           <Typography.Title level={2} style={{ fontWeight: "normal" }}>
             {this.props.title}
           </Typography.Title>
         }
-        renderItem={item => (
+        renderItem={(item) => (
           <List.Item>
             <List.Item.Meta
               avatar={
@@ -35,7 +35,7 @@ class AssignmentList extends Component {
                       display: "flex",
                       justifyContent: "space-around",
                       marginTop: 10,
-                      flexWrap: "wrap"
+                      flexWrap: "wrap",
                     }}
                   >
                     <Button type="link" icon="download">
